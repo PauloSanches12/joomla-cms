@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade" client="site">
+    <name>MOD_DIARIOOFICIAL_NAME</name>
+    <creationDate>2020-04-17</creationDate>
+    <copyright>2020 Barco Digital</copyright>
+    <license>GNU General Public License versão 2 ou posterior; consulte o arquivo License. txt</license>
+    <author>Barco Digital</author>
+    <authorEmail>admin@barco.digital</authorEmail>
+    <authorUrl>https://barco.digital</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>MOD_DIARIOOFICIAL_DESCRIPTION</description>
+    
+    <files>
+        <filename module="mod_diariooficial">mod_diariooficial.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="language">
+        
+			<language tag="en-GB">en-GB/en-GB.mod_diariooficial.ini</language>
+			<language tag="en-GB">en-GB/en-GB.mod_diariooficial.sys.ini</language>
+			<language tag="pt-BR">pt-BR/pt-BR.mod_diariooficial.ini</language>
+			<language tag="pt-BR">pt-BR/pt-BR.mod_diariooficial.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset 
+                name="content_type" 
+                label="MOD_DIARIOOFICIAL_CONTENT_TYPE_TAB_LBL"
+                description="MOD_DIARIOOFICIAL_CONTENT_TYPE_TAB_DESC">
+                <field
+                    name="content_type" type="list"
+                    label="MOD_DIARIOOFICIAL_CONTENT_TYPE_LBL"
+                    description="MOD_DIARIOOFICIAL_CONTENT_TYPE_DESC">
+                    <option value="blank">MOD_DIARIOOFICIAL_CUSTOM_CONTENT</option>
+                    <option value="list">MOD_DIARIOOFICIAL_LIST</option>
+                    <option value="item">MOD_DIARIOOFICIAL_ITEM</option>
+                </field>
+            </fieldset>
+            <fieldset 
+                name="blank_content" 
+                label="MOD_DIARIOOFICIAL_CUSTOM_CONTENT_TAB_LBL"
+                description="MOD_DIARIOOFICIAL_CUSTOM_CONTENT_TAB_DESC">
+                <field 
+                    name="html_content" type="editor" filter="safehtml"
+                    label="MOD_DIARIOOFICIAL_HTML_LBL"
+                    description="MOD_DIARIOOFICIAL_HTML_DESC" />
+            </fieldset>
+            <fieldset 
+                name="list_content" 
+                label="MOD_DIARIOOFICIAL_LIST_CONTENT_TAB_LBL"
+                description="MOD_DIARIOOFICIAL_LIST_CONTENT_TAB_DESC">
+                <field
+                    name="table" type="list"
+                    label="MOD_DIARIOOFICIAL_TABLE_LBL"
+                    description="MOD_DIARIOOFICIAL_TABLE_DESC">
+                    
+	<option value="#__diariooficial_diarios">#__diariooficial_diarios</option>
+                </field>
+                <field 
+                    name="field" type="groupedlist" default=""
+                    label="MOD_DIARIOOFICIAL_FIELD_LBL"
+                    description="MOD_DIARIOOFICIAL_FIELD_DESC">
+                    
+	<group label="#__diariooficial_diarios">
+		<option value="#__diariooficial_diarios:id">id</option>
+		<option value="#__diariooficial_diarios:created_by">created_by</option>
+		<option value="#__diariooficial_diarios:modified_by">modified_by</option>
+		<option value="#__diariooficial_diarios:edicao">edicao</option>
+		<option value="#__diariooficial_diarios:data">data</option>
+		<option value="#__diariooficial_diarios:texto">texto</option>
+		<option value="#__diariooficial_diarios:downloads">downloads</option>
+		<option value="#__diariooficial_diarios:arquivo">arquivo</option>
+		<option value="#__diariooficial_diarios:imagem">imagem</option>
+		<option value="#__diariooficial_diarios:url">url</option>
+		<option value="#__diariooficial_diarios:destaque">destaque</option>
+	</group>
+                </field>
+                <field 
+                    name="offset" type="text" default="0" filter="uint" class="input-small"
+                    label="MOD_DIARIOOFICIAL_OFFSET_LBL"
+                    description="MOD_DIARIOOFICIAL_OFFSET_DESC" />
+                <field 
+                    name="limit" type="text" default="10" filter="uint" class="input-small"
+                    label="MOD_DIARIOOFICIAL_LIMIT_LBL"
+                    description="MOD_DIARIOOFICIAL_LIMIT_DESC" />
+            </fieldset>
+            <fieldset 
+                name="item_content" 
+                label="MOD_DIARIOOFICIAL_ITEM_CONTENT_TAB"
+                description="MOD_DIARIOOFICIAL_ITEM_CONTENT_TAB_DESC">
+                <field
+                    name="item_table" type="list"
+                    label="MOD_DIARIOOFICIAL_TABLE_LBL"
+                    description="MOD_DIARIOOFICIAL_TABLE_DESC">
+                    
+	<option value="#__diariooficial_diarios">#__diariooficial_diarios</option>
+                </field>
+                <field 
+                    name="item_id" type="text" filter="uint" class="input-small"
+                    label="MOD_DIARIOOFICIAL_ITEM_ID_LBL"
+                    description="MOD_DIARIOOFICIAL_ITEM_ID_DESC"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

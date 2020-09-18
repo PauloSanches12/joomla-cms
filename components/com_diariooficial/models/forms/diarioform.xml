@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="edicao" filter="safehtml" type="text" required="true" label="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_EDICAO" description="COM_DIARIOOFICIAL_FORM_DESC_DIARIO_EDICAO" hint="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_EDICAO"/>
+    <field name="data" default="0000-00-00 00:00:00" type="calendar" class="inputbox" format="%Y-%m-%d %H:%M:%S" showtime="true" translateformat="true" label="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_DATA" description="COM_DIARIOOFICIAL_FORM_DESC_DIARIO_DATA" hint="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_DATA"/>
+    <field name="texto" type="editor" buttons="true" class="inputbox" filter="safehtml" label="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_TEXTO" description="COM_DIARIOOFICIAL_FORM_DESC_DIARIO_TEXTO" hint="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_TEXTO"/>
+    <field name="downloads" filter="safehtml" type="text" label="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_DOWNLOADS" description="COM_DIARIOOFICIAL_FORM_DESC_DIARIO_DOWNLOADS" hint="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_DOWNLOADS"/>
+    <field name="arquivo" type="FileMultiple" label="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_ARQUIVO" description="COM_DIARIOOFICIAL_FORM_DESC_DIARIO_ARQUIVO" hint="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_ARQUIVO"/>
+    <field name="imagem" type="FileMultiple" label="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_IMAGEM" description="COM_DIARIOOFICIAL_FORM_DESC_DIARIO_IMAGEM" hint="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_IMAGEM"/>
+    <field name="url" validate="url" type="url" label="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_URL" description="COM_DIARIOOFICIAL_FORM_DESC_DIARIO_URL" hint="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_URL"/>
+    <field name="destaque" label="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_DESTAQUE" description="COM_DIARIOOFICIAL_FORM_DESC_DIARIO_DESTAQUE" hint="COM_DIARIOOFICIAL_FORM_LBL_DIARIO_DESTAQUE"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>
